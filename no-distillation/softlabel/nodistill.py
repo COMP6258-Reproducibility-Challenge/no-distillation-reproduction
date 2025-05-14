@@ -302,6 +302,7 @@ def main(args):
         
         if args.expt_type == 'low_entropy_boost':
 
+            current_pct = expt_dict[exp_num]
             # Checking sum to 1:
             # print('Sums to 1 before?:', torch.sum(label_syn, dim=1))
 
@@ -360,6 +361,14 @@ def main(args):
                 
 
     ''' generate experiment hyperparameters '''
+
+    ''' Custom Entropy Boosting Experiment '''
+    elif args.expt_type == 'low_entropy_boost':
+        print("Preparing low-entropy label noise injection experiment...")
+        print(f"Alpha (noise strength): {args.entropy_boost_alpha}")
+        print(f"Targeting bottom {args.num_low_entropy_images} low-entropy labels")
+        percentages = [0.01, 0.05, 0.1, 0.15, 0.20, 0.3, 0.5]  
+        expt_dict = {i: pct for i, pct in enumerate(percentages)}
 
     ''' optimal expert epoch'''
     if args.expt_type == 'tune_start': 
