@@ -15,3 +15,9 @@ This file is a modification of nodistill.py. It includes:
 This folder contains another modification of nodistill.py which add experiments for mixing noise into a percentage of images with the lowest soft label entropy.
 - line 303: noise mixing code
 - line 365: experimenting over various percentages of the data
+
+## no_distillation.ipynb
+This notebook outputs the results for Table 1, then the original switching experiment, and the low entropy boosting experiment.
+
+## AdHocLabel.ipynb
+This notebook outputs the results for some reproduced experiments and the generated labels.
